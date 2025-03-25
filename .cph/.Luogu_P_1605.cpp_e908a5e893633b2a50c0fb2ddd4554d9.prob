@@ -1,0 +1,1 @@
+{"name":"Luogu - P1605","url":"https://www.luogu.com.cn/problem/P1605","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1742908785604,"input":"2 2 1\n1 1 2 2\n1 2\n","output":"1"}],"group":"luogu","srcPath":"c:\\Users\\xuzq0\\Desktop\\cpp\\Luogu_P_1605.cpp"}
