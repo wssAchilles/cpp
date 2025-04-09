@@ -13,12 +13,12 @@ void dfs(int x,int sum){
 			ans++;
 		} 
 		return;
-	}
-	for(int i=0;i<=1000;i++){
-		arry[x]=i;
-		dfs(x+1,sum+fire[i]);
-		arry[x]=0;
-	}
+	}else{
+		for(int i=0;i<=1000;i++){
+			arry[x]=i;
+			dfs(x+1,sum+fire[i]);
+			arry[x]=0;}
+		}
 }
 int main(){
 	scanf("%d",&n);
