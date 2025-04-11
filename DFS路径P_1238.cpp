@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-int m,n,ex,ey,fx,fy,k=0,flag=0;
+int m,n,ex,ey,fx,fy,k=0,flag=0,ans=0;
 int dx[4]={0,-1,0,1},dy[4]={-1,0,1,0};
-int vis[10][10],arry[10][10],sum[5000][2];
+int vis[10][10],arry[10][10],sum[5000][2],step[1000];
 void print(){
 	if(flag==0){
 		flag=1;
@@ -16,6 +16,7 @@ void print(){
 void dfs(int x,int y){
 	if(x==fx&&y==fy){
 		print();
+		step[ans++]=k+1;
 		return;
 	}
 	else{
@@ -42,6 +43,8 @@ int main(){
 	cin>>ex>>ey;
 	cin>>fx>>fy;
 	dfs(ex,ey);
+	int *min=min_element(step,step+ans);
+	printf("×îÉÙ%d²½",*min);
 	if(flag==0){
 		cout<<"-1";
 	}
