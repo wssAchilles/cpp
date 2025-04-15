@@ -11,12 +11,12 @@ void print(){
 	for(int i=0;i<k;i++){
 		cout<<"("<<sum[i][0]<<","<<sum[i][1]<<")"<<"->";
 	}
-	cout<<"("<<fx<<","<<fy<<")"<<"总共"<<k+1<<"步"<<endl;
+	cout<<"("<<fx<<","<<fy<<")"<<"总共"<<k<<"步"<<endl;
 }
 void dfs(int x,int y){
 	if(x==fx&&y==fy){
 		print();
-		step[ans++]=k+1;
+		step[ans++]=k;
 		return;
 	}
 	else{

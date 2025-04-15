@@ -20,11 +20,7 @@ int main()
 			scanf("%d", &a[i][j]);
 	scanf("%d%d%d%d", &startx, &starty, &p, &q);
 	// BFS
-	point start;
-	start.x = startx;
-	start.y = starty;
-	start.step = 0;
-	r.push(start); // 将起点入队
+	r.push(point{startx,starty,0}); // 将起点入队
 	vis[startx][starty] = 1;
 	int flag = 0;
 	while (!r.empty())
@@ -52,7 +48,7 @@ int main()
 				vis[tx][ty] = 1;
 			}
 		}
-		r.pop(); // 队首出队
+		r.pop(); // 出队
 	}
 	if (flag == 0)
 		printf("no answer!");

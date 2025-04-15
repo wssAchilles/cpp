@@ -9,22 +9,17 @@ struct node{
 };
 queue<node> r;
 int bfs(int x,int y){
-	memset(vis,0,sizeof(vis));
-	node start;
-	start.x=x,start.y=y,start.step=0;
-	r.push(start);
+	r.push(node{x,y,0}); // 将起点入队
 	vis[x][y]=1;
 	while(!r.empty()){
-		int x=r.front().x,y=r.front().y;
+		int x = r.front().x, y = r.front().y;
 		if(x==fx&&y==fy){
 			return r.front().step;
 		}
 		for(int i=0;i<4;i++){
 			int nx=x+dx[i],ny=y+dy[i];
 			if(nx >= 1 && nx <= n && ny >= 1 && ny <= n &&vis[nx][ny]==0&&arry[nx][ny]==0){
-				node temp;
-				temp.x=nx,temp.y=ny,temp.step=r.front().step+1;
-				r.push(temp);
+				r.push(node{nx,ny,r.front().step+1});
 				vis[nx][ny]=1;
 			}
 		}
@@ -33,6 +28,7 @@ int bfs(int x,int y){
 	return -1; // 如果没有路径返回-1
 }
 int main(){
+	memset(vis,0,sizeof(vis));
 	scanf("%d",&n);
 	for(int i=1;i<=n;i++){
 		for(int j=1;j<=n;j++){
@@ -47,13 +43,12 @@ int main(){
 // #include <bits/stdc++.h>
 // using namespace std;
 // const int N = 1005;
-// int n, sx, sy, fx, fy,k=0,ans=0;
+// int n,m, sx, sy, fx, fy,k=0,ans=0;
 // int arry[N][N], vis[N][N],step[N];
 // int dx[4] = {0, -1, 0, 1}, dy[4] = {-1, 0, 1, 0};
 // void dfs(int x,int y){
-// 	memset(vis,0,sizeof(vis));
 // 	if(x==fx&&y==fy){
-// 		step[ans++]=k+1;
+// 		step[ans++]=k;
 // 		return;
 // 	}else{
 // 		for(int i=0;i<4;i++){
